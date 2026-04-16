@@ -93,7 +93,7 @@
       background: rgba(13,13,13,0.97);
     }
     .nav-logo {
-      height: 36px;
+      height: 54px;
       width: auto;
       display: block;
       mix-blend-mode: screen;
@@ -116,7 +116,7 @@
     @media (max-width: 480px) {
       nav { padding: 12px 20px; }
       nav.scrolled { padding: 9px 20px; }
-      .nav-logo { height: 26px; }
+      .nav-logo { height: 39px; }
       .nav-cta { font-size: 11px; padding: 9px 14px; }
     }
 
@@ -178,12 +178,17 @@
       animation: fadeDown 0.8s ease both;
     }
     .hero-logo {
-      display: none; /* hidden, replaced by canvas */
-    }
-    #hero-logo-canvas {
-      width: min(380px, 88vw);
+      width: min(570px, 92vw);
       height: auto;
       display: block;
+      margin: 0 auto 28px;
+      mix-blend-mode: screen;
+      animation: fadeDown 0.8s 0.1s ease both;
+    }
+    #hero-logo-canvas {
+      width: min(570px, 92vw);
+      height: auto;
+      display: none; /* fallback canvas — oculto por padrão, ativado por JS se necessário */
       margin: 0 auto 28px;
       mix-blend-mode: screen;
       animation: fadeDown 0.8s 0.1s ease both;
@@ -574,6 +579,50 @@
       margin-top: 20px;
     }
     @media (max-width: 480px) { .galeria-ticker-inner img { height: 180px; } }
+
+    /* ═══════════════════════════════════════════
+       VIDEO TAKES SECTION
+    ═══════════════════════════════════════════ */
+    .takes-section {
+      background: var(--bg);
+      border-top: 1px solid var(--gold-border);
+      padding: 80px 24px;
+      text-align: center;
+    }
+    .takes-video-wrap {
+      max-width: 800px;
+      margin: 40px auto 0;
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--gold-border);
+      background: var(--bg-3);
+    }
+    .takes-video-wrap iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      display: block;
+      border: 0;
+    }
+    .takes-placeholder {
+      aspect-ratio: 16/9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: var(--text-muted);
+      background: var(--bg-3);
+      padding: 40px;
+    }
+    .takes-placeholder-icon {
+      font-size: 48px;
+      opacity: 0.4;
+    }
+    .takes-placeholder p {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
 
     /* ═══════════════════════════════════════════
        S6 — MENTORES
@@ -1058,7 +1107,7 @@
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-badge">CONVOCAÇÃO ABERTA &middot; 16 DE MAIO &middot; RIO DE JANEIRO</div>
-    <img src="assets/Logoevento.png" alt="Operação Rio" class="hero-logo" id="hero-logo-src">
+    <img src="assets/logooperacaosemfundo.png" alt="Operação Rio" class="hero-logo" id="hero-logo-src">
     <canvas id="hero-logo-canvas" aria-label="Operação Rio"></canvas>
     <h1 class="hero-headline">
       Você não precisa de mais motivação.<br><span>Precisa de direção.</span>
@@ -1097,16 +1146,31 @@
       <div class="divider"></div>
     </div>
     <div class="diagnostico-body reveal">
-      <p>Você acorda cedo. Fecha o caixa tarde. Resolve problema de cliente, de equipe, de fornecedor. Apaga incêndio de segunda a segunda. E no fim do mês, o número não reflete nem metade do que você entregou.</p>
-      <p><strong>Não é preguiça. Não é falta de vontade.</strong> Você trabalha mais do que a maioria das pessoas que conhece.</p>
-      <p class="highlight">O problema é outro.</p>
-      <p>Você está preso num ciclo onde o esforço alimenta a operação, mas não move o negócio. Você é o motor, o combustível e o mecânico ao mesmo tempo. E nenhum negócio escala assim.</p>
-      <p>A maioria dos empresários nessa situação faz o que parece lógico: trabalha mais. Investe em mais uma ferramenta. Tenta mais um canal. Posta mais. Gasta mais.</p>
-      <p>E o resultado? O mesmo. Ou pior: gasta mais para ter o mesmo resultado.</p>
+      <p>Você acorda cedo. Fecha o caixa tarde. Apaga incêndio de segunda a segunda. E no fim do mês, o número não reflete nem metade do que você entregou.</p>
+      <p class="highlight">O problema não é esforço. É direção.</p>
+      <p>Você está preso num ciclo onde o esforço alimenta a operação, mas não move o negócio. <strong>Nenhum negócio escala assim.</strong></p>
       <p><strong>Não é falta de esforço. É falta de direção estratégica.</strong> É exatamente sobre isso que a Operação Rio existe.</p>
     </div>
   </div>
 </section>
+
+<!-- ════════════════════════
+     GALERIA (prova visual antecipada)
+════════════════════════ -->
+<div style="background:var(--bg);padding:48px 0 32px;">
+  <div style="text-align:center;margin-bottom:20px;" class="reveal">
+    <span class="galeria-label">A última edição. O próximo capítulo é no Rio.</span>
+  </div>
+  <div class="galeria-ticker-wrap">
+    <div class="galeria-ticker-inner" id="galeria-inner">
+      <img src="assets/evento-3pessoas-edited.jpeg" alt="Fé no Front">
+      <img src="assets/evento-plateia-1.jpeg" alt="Fé no Front">
+      <img src="assets/evento-plateia-2.jpeg" alt="Fé no Front">
+      <img src="assets/evento-plateia-3.jpeg" alt="Fé no Front">
+      <img src="assets/evento-plateia-4.jpeg" alt="Fé no Front">
+    </div>
+  </div>
+</div>
 
 <!-- ════════════════════════
      S3 — A VIRADA
@@ -1119,9 +1183,7 @@
       <div class="divider"></div>
     </div>
     <div class="virada-body">
-      <p class="reveal">Existe uma diferença entre correr rápido e correr na direção certa.</p>
-      <p class="reveal">Quando um empresário para de operar no escuro e passa a ter clareza sobre três coisas: o que vende de verdade, para quem vende de verdade, e onde coloca cada real de investimento, o jogo muda. Não gradualmente. De forma perceptível em semanas.</p>
-      <p class="reveal">Isso não é teoria. É o que acontece quando:</p>
+      <p class="reveal">Quando um empresário passa a ter clareza sobre o que vende de verdade, para quem vende de verdade, e onde coloca cada real: o jogo muda. Não gradualmente. De forma perceptível em semanas.</p>
       <div class="virada-items">
         <div class="virada-item reveal">
           <p>Você descobre que o canal onde gasta mais <em>não é o canal que mais converte</em>. E redireciona.</p>
@@ -1130,13 +1192,10 @@
           <p>Você percebe que o mercado não te vê como você pensa que te vê. E <em>reposiciona</em>.</p>
         </div>
         <div class="virada-item reveal">
-          <p>Você entende quanto do seu faturamento deveria ir para marketing, com qual margem, em qual canal. E <em>para de chutar</em>.</p>
-        </div>
-        <div class="virada-item reveal">
           <p>Você mapeia a jornada real do cliente e encontra <em>os buracos onde está perdendo venda todos os dias</em>.</p>
         </div>
       </div>
-      <p class="reveal"><strong>A Operação Rio existe para entregar esse mapa.</strong> Não motivação. Não inspiração genérica. Um diagnóstico e uma rota.</p>
+      <p class="reveal"><strong>A Operação Rio entrega esse mapa.</strong> Não motivação. Um diagnóstico e uma rota.</p>
     </div>
   </div>
 </section>
@@ -1182,7 +1241,7 @@
 </section>
 
 <!-- ════════════════════════
-     S5 — PROVA SOCIAL
+     S5 — DEPOIMENTO
 ════════════════════════ -->
 <section class="prova-section tex-dots" id="prova">
   <div class="container">
@@ -1192,7 +1251,7 @@
       <div class="divider"></div>
     </div>
 
-    <!-- Vídeo -->
+    <!-- Vídeo depoimento -->
     <div class="video-wrapper reveal">
       <div class="video-frame">
         <iframe
@@ -1203,21 +1262,7 @@
         </iframe>
       </div>
     </div>
-
-    <!-- Galeria ticker -->
-    <div class="reveal">
-      <span class="galeria-label">A última edição. O próximo capítulo é no Rio.</span>
-      <div class="galeria-ticker-wrap">
-        <div class="galeria-ticker-inner" id="galeria-inner">
-          <img src="assets/evento-3pessoas-edited.jpeg" alt="Fé no Front">
-          <img src="assets/evento-plateia-1.jpeg" alt="Fé no Front">
-          <img src="assets/evento-plateia-2.jpeg" alt="Fé no Front">
-          <img src="assets/evento-plateia-3.jpeg" alt="Fé no Front">
-          <img src="assets/evento-plateia-4.jpeg" alt="Fé no Front">
-        </div>
-      </div>
-      <p class="galeria-caption">Imersão Fé no Front, edição anterior</p>
-    </div>
+    <p class="galeria-caption reveal">Mentorado Fé no Front — resultado real</p>
   </div>
 </section>
 
@@ -1241,12 +1286,13 @@
         </div>
         <div class="mentor-body">
           <h3>Braian Corrêa</h3>
-          <span class="mentor-title">Empresário e mentor de negócios · 15 anos no empreendedorismo</span>
-          <p>Braian é o cara que faz a pergunta que ninguém quer ouvir: você sabe o que você realmente vende? Não o que está no cardápio ou na proposta. O que o cliente compra. Qual problema você resolve. Qual transformação você entrega.</p>
-          <p>Líder de um grupo empresarial com atuação em diversos segmentos, Braian conduz o bloco de produto e modelo de negócio na Operação Rio: como construir uma esteira de ofertas que escala, como criar previsibilidade de receita e como parar de depender de uma única fonte de faturamento.</p>
+          <span class="mentor-title">Co-fundador do Movimento Fé no Front · CEO Grupo Brava</span>
+          <p>Braian é o cara que faz a pergunta que ninguém quer ouvir: você sabe o que você realmente vende? Não o que está no cardápio ou na proposta. O que o cliente compra, qual problema você resolve, qual transformação você entrega.</p>
+          <p>CEO do Grupo Brava, que reúne empresas em múltiplos segmentos com faturamento que gira em torno de R$6 milhões. Mentorado de Flávio Augusto e Caio Carneiro no programa Vende-C. Na Operação Rio, Braian conduz o bloco de produto e modelo de negócio: esteira de ofertas, previsibilidade de receita e crescimento com estrutura.</p>
           <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;">
-            <span style="background:rgba(201,162,39,0.1);border:1px solid var(--gold-border);color:var(--gold);font-size:12px;padding:6px 14px;border-radius:100px;white-space:nowrap;">15 anos empreendendo</span>
-            <span style="background:rgba(201,162,39,0.1);border:1px solid var(--gold-border);color:var(--gold);font-size:12px;padding:6px 14px;border-radius:100px;white-space:nowrap;">Múltiplos segmentos</span>
+            <span style="background:rgba(201,162,39,0.1);border:1px solid var(--gold-border);color:var(--gold);font-size:12px;padding:6px 14px;border-radius:100px;white-space:nowrap;">CEO · Grupo Brava R$6M+</span>
+            <span style="background:rgba(201,162,39,0.1);border:1px solid var(--gold-border);color:var(--gold);font-size:12px;padding:6px 14px;border-radius:100px;white-space:nowrap;">Co-fundador Fé no Front</span>
+            <span style="background:rgba(201,162,39,0.1);border:1px solid var(--gold-border);color:var(--gold);font-size:12px;padding:6px 14px;border-radius:100px;white-space:nowrap;">Mentorado Vende-C</span>
           </div>
         </div>
       </div>
@@ -1271,6 +1317,27 @@
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════
+     VIDEO TAKES — EVENTO ANTERIOR
+════════════════════════ -->
+<section class="takes-section" id="takes">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-tag">Como Foi a Última Edição</span>
+      <h2 class="section-title">Veja o que aconteceu<br>na <em>edição anterior</em>.</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="takes-video-wrap reveal">
+      <!-- PLACEHOLDER: substituir pelo link do vídeo de takes do evento FronteSara quando Miguel editar -->
+      <div class="takes-placeholder">
+        <div class="takes-placeholder-icon">&#127909;</div>
+        <p><strong style="color:var(--text);">Vídeo em edição</strong></p>
+        <p>Takes do evento anterior chegando em breve</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1415,12 +1482,12 @@
           <h4>Cronograma</h4>
           <table class="cronograma">
             <tr><td>09:00</td><td>Credenciamento e abertura</td></tr>
-            <tr><td>09:30</td><td>Bloco 1: Braian Corrêa</td></tr>
-            <tr class="break-row"><td>10:30</td><td>&#9749; Coffee Break</td></tr>
-            <tr><td>11:00</td><td>Bloco 2: Nando Borba</td></tr>
-            <tr><td>12:00</td><td>Painel Q&amp;A com Braian e Nando</td></tr>
-            <tr><td>12:30</td><td>Networking livre</td></tr>
-            <tr><td>13:00</td><td>Encerramento</td></tr>
+            <tr><td>09:30</td><td><strong>Braian Corrêa</strong> · Produto, Oferta e Modelo de Negócio</td></tr>
+            <tr class="break-row"><td>11:00</td><td>&#9749; Coffee Break</td></tr>
+            <tr><td>11:30</td><td><strong>Nando Borba</strong> · Marketing com Critério — Canais e Conversão</td></tr>
+            <tr><td>13:00</td><td>Painel: Dúvidas e Análise de Negócios</td></tr>
+            <tr><td>13:20</td><td>Networking</td></tr>
+            <tr><td>13:50</td><td>Encerramento</td></tr>
           </table>
         </div>
         <br><br>
@@ -1745,21 +1812,17 @@
   tick();
   setInterval(tick, 1000);
 
-  /* ─── LOGO AUTO-CROP ─── */
+  /* ─── LOGO: novo logo sem fundo — exibe img direto, canvas apenas como fallback opcional ─── */
   (function() {
     const src = document.getElementById('hero-logo-src');
     const out = document.getElementById('hero-logo-canvas');
     if (!src || !out) return;
 
+    // Com o novo logo sem fundo, a img já está correta — canvas fica oculto
+    // Mantemos o código abaixo apenas como fallback caso seja necessário no futuro
     function showFallback() {
-      // Se canvas falhar (ex: file:// CORS), mostra img original com screen blend
       out.style.display = 'none';
       src.style.display = 'block';
-      src.style.width = 'min(380px, 88vw)';
-      src.style.height = 'auto';
-      src.style.margin = '0 auto 28px';
-      src.style.mixBlendMode = 'screen';
-      src.style.animation = 'fadeDown 0.8s 0.1s ease both';
     }
 
     function cropLogo(img) {
