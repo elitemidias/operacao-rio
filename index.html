@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Operação Rio — Imersão Presencial | 16 de Maio de 2026 · Rio de Janeiro</title>
-  <meta name="description" content="Um dia pra mudar o jogo que você joga há anos. Diagnóstico estratégico presencial com Nando Borba e Braian Corrêa. Rio de Janeiro, 16 de Maio de 2026.">
-  <meta property="og:title" content="Operação Rio — 16 de Maio | Rio de Janeiro">
+  <title>Operação Rio — Imersão Presencial | 15 de Maio de 2026 · Rio de Janeiro</title>
+  <meta name="description" content="Um dia pra mudar o jogo que você joga há anos. Diagnóstico estratégico presencial com Nando Borba e Braian Corrêa. Rio de Janeiro, 15 de Maio de 2026.">
+  <meta property="og:title" content="Operação Rio — 15 de Maio | Rio de Janeiro">
   <meta property="og:description" content="Você não precisa de mais motivação. Precisa de direção.">
   <meta property="og:image" content="assets/Logoevento.png">
   <meta name="theme-color" content="#0D0D0D">
@@ -93,7 +93,7 @@
       background: rgba(13,13,13,0.97);
     }
     .nav-logo {
-      height: 54px;
+      height: 81px;
       width: auto;
       display: block;
       mix-blend-mode: screen;
@@ -116,7 +116,7 @@
     @media (max-width: 480px) {
       nav { padding: 12px 20px; }
       nav.scrolled { padding: 9px 20px; }
-      .nav-logo { height: 39px; }
+      .nav-logo { height: 58px; }
       .nav-cta { font-size: 11px; padding: 9px 14px; }
     }
 
@@ -182,7 +182,6 @@
       height: auto;
       display: block;
       margin: 0 auto 28px;
-      mix-blend-mode: screen;
       animation: fadeDown 0.8s 0.1s ease both;
     }
     #hero-logo-canvas {
@@ -400,6 +399,25 @@
       line-height: 1.85;
     }
     .virada-body strong { color: var(--text); }
+    .virada-destaque {
+      margin-top: 8px;
+      padding: 28px 32px;
+      background: linear-gradient(135deg, rgba(201,162,39,0.12), rgba(201,162,39,0.04));
+      border-left: 3px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+    }
+    .virada-destaque p {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(22px, 3.5vw, 32px);
+      letter-spacing: 1.5px;
+      color: var(--gold);
+      line-height: 1.2;
+      margin: 0;
+    }
+    .virada-destaque p + p {
+      color: var(--text);
+      margin-top: 4px;
+    }
     .virada-items {
       display: flex;
       flex-direction: column;
@@ -504,23 +522,23 @@
     .video-frame {
       position: relative;
       width: 100%;
-      max-width: 360px;
-      border-radius: 12px;
+      max-width: 340px;
+      border-radius: 16px;
       overflow: hidden;
       border: 1px solid var(--gold-border);
-      box-shadow: 0 0 60px rgba(201,162,39,0.1);
+      box-shadow:
+        0 0 0 1px rgba(201,162,39,0.08),
+        0 8px 32px rgba(0,0,0,0.6),
+        0 0 60px rgba(201,162,39,0.12);
+      background: #000;
     }
-    .video-frame::before {
-      content: '';
+    .video-frame iframe,
+    .video-frame video {
       display: block;
-      padding-top: 177.78%; /* 9:16 */
-    }
-    .video-frame iframe {
-      position: absolute;
-      inset: 0;
       width: 100%;
-      height: 100%;
+      aspect-ratio: 9 / 16;
       border: none;
+      object-fit: cover;
     }
 
     /* Galeria ticker */
@@ -660,6 +678,9 @@
       object-fit: cover;
       object-position: center 10%;
       transition: transform 0.5s;
+    }
+    .mentor-img-wrap img.zoom-out {
+      object-position: center 18%;
     }
     .mentor-card:hover .mentor-img-wrap img { transform: scale(1.04); }
     .mentor-img-overlay {
@@ -954,6 +975,61 @@
     ═══════════════════════════════════════════ */
     .objecoes-section { background: var(--bg); position: relative; }
     .faq-section { background: var(--bg-2); border-top: 1px solid var(--gold-border); position: relative; }
+
+    /* ═══════════════════════════════════════════
+       INSTAGRAM SECTION
+    ═══════════════════════════════════════════ */
+    .instagram-section {
+      background: var(--bg-3);
+      border-top: 1px solid var(--gold-border);
+      border-bottom: 1px solid var(--gold-border);
+      padding: 72px 24px;
+      text-align: center;
+    }
+    .instagram-card {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .instagram-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 20px;
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .instagram-icon svg { width: 36px; height: 36px; fill: #fff; }
+    .instagram-handle {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(28px, 5vw, 42px);
+      letter-spacing: 2px;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+    .instagram-handle span { color: var(--gold); }
+    .instagram-desc {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+    .btn-instagram {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 1px;
+      padding: 14px 32px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .btn-instagram:hover { opacity: 0.88; transform: translateY(-2px); }
     .accordion { margin-top: 40px; max-width: 780px; }
     .acc-item { border-bottom: 1px solid rgba(255,255,255,0.07); }
     .acc-trigger {
@@ -1031,7 +1107,7 @@
       opacity: 0.7;
     }
     .cta-final-assinatura img {
-      height: 45px;
+      height: 68px;
       mix-blend-mode: screen;
       opacity: 0.7;
     }
@@ -1046,7 +1122,7 @@
       text-align: center;
     }
     .footer-logo {
-      height: 57px;
+      height: 86px;
       margin: 0 auto 18px;
       display: block;
       mix-blend-mode: screen;
@@ -1096,7 +1172,7 @@
 <!-- NAV -->
 <nav id="main-nav">
   <img src="assets/Fe no front logo transparente.png" alt="Fé no Front" class="nav-logo">
-  <a href="#lotes" class="nav-cta">ENTRAR NA OPERAÇÃO</a>
+  <a href="https://pay.hotmart.com/J105430338X?off=nyyzunej" target="_blank" rel="noopener" class="nav-cta">ENTRAR NA OPERAÇÃO</a>
 </nav>
 
 <!-- ════════════════════════
@@ -1106,19 +1182,19 @@
   <div class="hero-bg" id="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-badge">CONVOCAÇÃO ABERTA &middot; 16 DE MAIO &middot; RIO DE JANEIRO</div>
-    <img src="assets/logooperacaosemfundo.png" alt="Operação Rio" class="hero-logo" id="hero-logo-src">
-    <canvas id="hero-logo-canvas" aria-label="Operação Rio"></canvas>
+    <div class="hero-badge">CONVOCAÇÃO ABERTA &middot; 15 DE MAIO &middot; RIO DE JANEIRO</div>
+    <img src="assets/logo-hero-clean.png" alt="Operação Rio" class="hero-logo" id="hero-logo-src">
+    <canvas id="hero-logo-canvas" aria-label="Operação Rio" style="display:none;"></canvas>
     <h1 class="hero-headline">
       Você não precisa de mais motivação.<br><span>Precisa de direção.</span>
     </h1>
     <p class="hero-sub">Um dia pra mudar o jogo que você joga há anos.</p>
     <div class="hero-infobar">
-      <span>16 de Maio de 2026</span>
+      <span>15 de Maio de 2026 · Sexta-feira</span>
       <span class="sep">&#9670;</span>
       <span>Rio de Janeiro</span>
       <span class="sep">&#9670;</span>
-      <span>Presencial · Meio período · 100 vagas</span>
+      <span>Presencial · 100 vagas</span>
       <span class="sep">&#9670;</span>
       <span class="price-tag">A partir de R$197</span>
     </div>
@@ -1129,9 +1205,9 @@
       <div class="cd-block"><span class="cd-number" id="cd-secs">00</span><span class="cd-label">Seg</span></div>
     </div>
     <div class="hero-cta-wrap">
-      <a href="#lotes" class="btn-primary">GARANTIR MINHA POSIÇÃO</a>
+      <a href="https://pay.hotmart.com/J105430338X?off=nyyzunej" target="_blank" rel="noopener" class="btn-primary">GARANTIR MINHA POSIÇÃO</a>
     </div>
-    <p class="hero-note">Lote 1 ativo: R$197 &middot; Preço sobe sem aviso &middot; Pagamento via Sympla</p>
+    <p class="hero-note">Lote 1 ativo: R$197 &middot; Valor promocional primeiro Lote &middot; Pagamento via Hotmart</p>
   </div>
 </section>
 
@@ -1141,7 +1217,7 @@
 <section class="diagnostico-section tex-lines" id="diagnostico">
   <div class="container">
     <div class="reveal">
-      <span class="section-tag">Reconhecimento</span>
+      <span class="section-tag">Conhece alguém assim?</span>
       <h2 class="section-title">Se nada mudou até agora,<br>não é falta de <em>esforço</em>.</h2>
       <div class="divider"></div>
     </div>
@@ -1179,7 +1255,7 @@
   <div class="container">
     <div class="reveal">
       <span class="section-tag">A Mudança</span>
-      <h2 class="section-title">O dia em que você para de correr<br>e começa a correr com <em>coordenadas</em>.</h2>
+      <h2 class="section-title">O dia que você para de correr<br>e começa a <em>voar com coordenadas</em>.</h2>
       <div class="divider"></div>
     </div>
     <div class="virada-body">
@@ -1195,7 +1271,10 @@
           <p>Você mapeia a jornada real do cliente e encontra <em>os buracos onde está perdendo venda todos os dias</em>.</p>
         </div>
       </div>
-      <p class="reveal"><strong>A Operação Rio entrega esse mapa.</strong> Não motivação. Um diagnóstico e uma rota.</p>
+      <div class="reveal virada-destaque">
+        <p>A Operação Rio entrega esse mapa.</p>
+        <p>Não motivação. Um diagnóstico e uma rota.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1254,12 +1333,13 @@
     <!-- Vídeo depoimento -->
     <div class="video-wrapper reveal">
       <div class="video-frame">
-        <iframe
-          src="https://www.youtube.com/embed/2dOv9rjMdbc"
-          title="Depoimento Fé no Front"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+        <video
+          playsinline
+          controls
+          preload="metadata"
+          poster="">
+          <source src="assets/Depoimento-Eudes.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
     <p class="galeria-caption reveal">Mentorado Fé no Front — resultado real</p>
@@ -1299,7 +1379,7 @@
 
       <div class="mentor-card reveal">
         <div class="mentor-img-wrap">
-          <img src="assets/Nando.png" alt="Nando Borba">
+          <img src="assets/Nando.png" alt="Nando Borba" class="zoom-out">
           <div class="mentor-img-overlay"></div>
           <span class="mentor-badge">Fé no Front</span>
         </div>
@@ -1307,12 +1387,11 @@
           <h3>Nando Borba</h3>
           <span class="mentor-title">Fundador da Elite Mídias · Google Partner · Certificado Google Ads &amp; Kommo CRM</span>
           <p>Mais de R$5M em vendas corporativas B2B, R$3M faturados no digital e centenas de empresas atendidas pela Elite Mídias. Nando não chegou aqui com fórmula — chegou com diagnóstico: onde está o gargalo, o que ajustar, quanto investir e em qual canal.</p>
-          <p>Ele não é palestrante motivacional. É o cara que abre o painel de métricas do seu negócio e te mostra, com números, o que está funcionando e o que está queimando dinheiro. Criador do programa Fé no Front.</p>
+          <p>Ele não é palestrante motivacional. É o cara que abre o painel de métricas do seu negócio e te mostra, com números, o que está funcionando e o que está queimando dinheiro. Co-fundador do Movimento Fé no Front.</p>
           <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;">
             <span style="background:rgba(201,162,39,0.1);border:1px solid var(--gold-border);color:var(--gold);font-size:12px;padding:6px 14px;border-radius:100px;white-space:nowrap;">+R$5M em vendas B2B</span>
             <span style="background:rgba(201,162,39,0.1);border:1px solid var(--gold-border);color:var(--gold);font-size:12px;padding:6px 14px;border-radius:100px;white-space:nowrap;">+R$3M no digital</span>
             <span style="background:rgba(201,162,39,0.1);border:1px solid var(--gold-border);color:var(--gold);font-size:12px;padding:6px 14px;border-radius:100px;white-space:nowrap;">Google Partner</span>
-            <span style="background:rgba(201,162,39,0.1);border:1px solid var(--gold-border);color:var(--gold);font-size:12px;padding:6px 14px;border-radius:100px;white-space:nowrap;">Centenas de empresas</span>
           </div>
         </div>
       </div>
@@ -1348,8 +1427,8 @@
 <div style="background:var(--bg-3);border-top:1px solid var(--gold-border);border-bottom:1px solid var(--gold-border);padding:56px 24px;text-align:center;">
   <div style="max-width:640px;margin:0 auto;" class="reveal">
     <p style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;font-weight:600;">VAGAS LIMITADAS</p>
-    <p style="font-family:'Bebas Neue',sans-serif;font-size:clamp(26px,4vw,44px);letter-spacing:1px;line-height:1.1;margin-bottom:20px;">16 de Maio · Barra da Tijuca · Rio de Janeiro<br><span style="color:var(--gold)">Lote 1 a partir de R$197</span></p>
-    <a href="#lotes" class="btn-primary" style="animation:none;">VER PREÇOS E GARANTIR VAGA</a>
+    <p style="font-family:'Bebas Neue',sans-serif;font-size:clamp(26px,4vw,44px);letter-spacing:1px;line-height:1.1;margin-bottom:20px;">15 de Maio · Barra da Tijuca · Rio de Janeiro<br><span style="color:var(--gold)">Lote 1 a partir de R$197</span></p>
+    <a href="https://pay.hotmart.com/J105430338X?off=nyyzunej" target="_blank" rel="noopener" class="btn-primary" style="animation:none;">VER PREÇOS E GARANTIR VAGA</a>
   </div>
 </div>
 
@@ -1389,17 +1468,18 @@
           <span class="lot-badge">&#9679; ATIVO AGORA</span>
           <span class="lot-num">LOTE 1</span>
           <div class="lot-price">R$197</div>
-          <span class="lot-price-label">pagamento único via Sympla</span>
+          <span class="lot-price-label">pagamento único via Hotmart</span>
         </div>
         <div class="lot-body">
           <ul class="lot-features">
             <li><span class="lot-check">&#10003;</span>Acesso completo à Operação Rio</li>
+            <li><span class="lot-check">&#10003;</span>Diagnóstico estratégico do seu negócio</li>
             <li><span class="lot-check">&#10003;</span>Material de apoio estratégico (digital)</li>
-            <li><span class="lot-check">&#10003;</span>Coffee break incluso</li>
-            <li><span class="lot-check">&#10003;</span>Grupo exclusivo pós-evento</li>
+            <li><span class="lot-check">&#10003;</span>Coffee break Premium incluso</li>
+            <li><span class="lot-check">&#10003;</span>Grupo de WhatsApp exclusivo pós-evento</li>
             <li><span class="lot-check">&#10003;</span>Networking com outros empresários</li>
           </ul>
-          <a href="#" class="lot-cta">GARANTIR MINHA POSIÇÃO</a>
+          <a href="https://pay.hotmart.com/J105430338X?off=nyyzunej" target="_blank" rel="noopener" class="lot-cta">GARANTIR MINHA POSIÇÃO</a>
         </div>
       </div>
 
@@ -1446,7 +1526,7 @@
     </div>
     <div class="lotes-note reveal">
       <strong>Não existe cupom.</strong> Não existe "me manda no direct que consigo desconto". O preço é o preço, e ele sobe conforme a sala enche. Simples assim.<br><br>
-      <em>Pagamento seguro via Sympla. Confirmação por email imediata.</em>
+      <em>Pagamento seguro via Hotmart. Confirmação por email imediata.</em>
     </div>
   </div>
 </section>
@@ -1466,14 +1546,14 @@
         <div class="info-block reveal">
           <h4>Data e Local</h4>
           <ul class="info-list">
-            <li><span class="dot"></span><div><strong>16 de maio de 2026</strong> · sábado</div></li>
-            <li><span class="dot"></span><div><strong>Av. Embaixador Abelardo Bueno, 1</strong> · Barra da Tijuca · Rio de Janeiro, RJ</div></li>
-            <li><span class="dot"></span><div>Formato: <strong>Imersão presencial</strong> · meio período · objetivo e sem enrolação</div></li>
+            <li><span class="dot"></span><div><strong>15 de maio de 2026</strong> · sexta-feira</div></li>
+            <li><span class="dot"></span><div><strong>Av. Embaixador Abelardo Bueno, 1 — Sala de Treinamentos</strong> · Barra da Tijuca · Rio de Janeiro, RJ</div></li>
+            <li><span class="dot"></span><div>Formato: <strong>Imersão presencial</strong> · objetivo e sem enrolação</div></li>
             <li><span class="dot"></span><div>Endereço completo e instruções de acesso enviados por email após a inscrição</div></li>
           </ul>
           <div class="venue-photo">
             <img src="assets/localdoevento.jpg" alt="Local do evento">
-            <div class="venue-photo-caption">Av. Embaixador Abelardo Bueno, 1 · Barra da Tijuca</div>
+            <div class="venue-photo-caption">Av. Embaixador Abelardo Bueno, 1 · Sala de Treinamentos · Barra da Tijuca</div>
           </div>
         </div>
       </div>
@@ -1484,7 +1564,7 @@
             <tr><td>09:00</td><td>Credenciamento e abertura</td></tr>
             <tr><td>09:30</td><td><strong>Braian Corrêa</strong> · Produto, Oferta e Modelo de Negócio</td></tr>
             <tr class="break-row"><td>11:00</td><td>&#9749; Coffee Break</td></tr>
-            <tr><td>11:30</td><td><strong>Nando Borba</strong> · Marketing com Critério — Canais e Conversão</td></tr>
+            <tr><td>11:30</td><td><strong>Nando Borba</strong> · Marketing, Vendas e IA — Estratégias para o seu negócio vender mais</td></tr>
             <tr><td>13:00</td><td>Painel: Dúvidas e Análise de Negócios</td></tr>
             <tr><td>13:20</td><td>Networking</td></tr>
             <tr><td>13:50</td><td>Encerramento</td></tr>
@@ -1590,13 +1670,32 @@
       <p>Ninguém vai te convencer. Ninguém vai te ligar oferecendo desconto. <strong>A decisão é sua e o tempo é agora.</strong></p>
     </div>
     <div class="reveal">
-      <a href="#lotes" class="btn-primary">ENTRAR NA OPERAÇÃO</a>
+      <a href="https://pay.hotmart.com/J105430338X?off=nyyzunej" target="_blank" rel="noopener" class="btn-primary">ENTRAR NA OPERAÇÃO</a>
     </div>
-    <p class="cta-final-note reveal">Lote 1 ativo · Vagas limitadas · Sympla</p>
+    <p class="cta-final-note reveal">Lote 1 ativo · Vagas limitadas · Hotmart</p>
     <div class="cta-final-assinatura reveal">
       <span>Uma iniciativa</span>
       <img src="assets/Fe no front logo transparente.png" alt="Fé no Front">
     </div>
+  </div>
+</section>
+
+<!-- ════════════════════════
+     INSTAGRAM
+════════════════════════ -->
+<section class="instagram-section" id="instagram">
+  <div class="instagram-card reveal">
+    <div class="instagram-icon">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+      </svg>
+    </div>
+    <div class="instagram-handle"><span>@</span>fenofront</div>
+    <p class="instagram-desc">Conteúdo sobre estratégia, negócios e mentalidade para empresários que querem crescer com direção. Acompanhe a jornada antes e depois do evento.</p>
+    <a href="https://www.instagram.com/fenofront/" target="_blank" rel="noopener" class="btn-instagram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      SEGUIR NO INSTAGRAM
+    </a>
   </div>
 </section>
 
@@ -1644,7 +1743,7 @@
           <span class="acc-icon">+</span>
         </button>
         <div class="acc-body">
-          <p>Via Sympla. Cartão de crédito, boleto ou PIX. Confirmação imediata.</p>
+          <p>Via Hotmart. Cartão de crédito, boleto ou PIX. Confirmação imediata.</p>
         </div>
       </div>
       <div class="acc-item">
@@ -1653,7 +1752,7 @@
           <span class="acc-icon">+</span>
         </button>
         <div class="acc-body">
-          <p>Conforme a política da Sympla. Consulte os termos na plataforma antes da compra.</p>
+          <p>Conforme a política da Hotmart. Consulte os termos na plataforma antes da compra.</p>
         </div>
       </div>
       <div class="acc-item">
@@ -1682,13 +1781,13 @@
 <footer>
   <img src="assets/Fe no front logo transparente.png" alt="Fé no Front" class="footer-logo">
   <div class="footer-text">
-    <p>Operação Rio · 16 de Maio de 2026 · Rio de Janeiro</p>
-    <p style="margin-top:8px">Uma iniciativa Fé no Front · Dúvidas? <a href="#">Fale conosco no WhatsApp</a></p>
+    <p>Operação Rio · 15 de Maio de 2026 · Rio de Janeiro</p>
+    <p style="margin-top:8px">Uma iniciativa Fé no Front · Dúvidas? <a href="https://wa.me/5521996081820?text=Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20immers%C3%A3o%20Opera%C3%A7%C3%A3o%20Rio" target="_blank" rel="noopener">Fale conosco no WhatsApp</a></p>
   </div>
 </footer>
 
 <!-- WHATSAPP FAB -->
-<a href="https://wa.me/55XXXXXXXXXXX" target="_blank" rel="noopener noreferrer" class="whatsapp-fab">
+<a href="https://wa.me/5521996081820?text=Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20immers%C3%A3o%20Opera%C3%A7%C3%A3o%20Rio" target="_blank" rel="noopener noreferrer" class="whatsapp-fab">
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
   </svg>
@@ -1798,7 +1897,7 @@
   /* ─── COUNTDOWN ─── */
   function pad(n) { return String(n).padStart(2, '0'); }
   function tick() {
-    const diff = new Date('2026-05-16T09:00:00-03:00').getTime() - Date.now();
+    const diff = new Date('2026-05-15T09:00:00-03:00').getTime() - Date.now();
     if (diff <= 0) {
       document.getElementById('countdown').innerHTML =
         '<div class="cd-block"><span class="cd-number" style="font-size:22px;letter-spacing:0">HOJE É O DIA</span></div>';
@@ -1812,80 +1911,7 @@
   tick();
   setInterval(tick, 1000);
 
-  /* ─── LOGO: novo logo sem fundo — exibe img direto, canvas apenas como fallback opcional ─── */
-  (function() {
-    const src = document.getElementById('hero-logo-src');
-    const out = document.getElementById('hero-logo-canvas');
-    if (!src || !out) return;
-
-    // Com o novo logo sem fundo, a img já está correta — canvas fica oculto
-    // Mantemos o código abaixo apenas como fallback caso seja necessário no futuro
-    function showFallback() {
-      out.style.display = 'none';
-      src.style.display = 'block';
-    }
-
-    function cropLogo(img) {
-      try {
-        const tmp = document.createElement('canvas');
-        tmp.width  = img.naturalWidth;
-        tmp.height = img.naturalHeight;
-        const ctx = tmp.getContext('2d');
-        ctx.drawImage(img, 0, 0);
-
-        let data;
-        try {
-          data = ctx.getImageData(0, 0, tmp.width, tmp.height).data;
-        } catch(e) {
-          // Bloqueado por CORS (file:// protocol) — usa fallback
-          showFallback();
-          return;
-        }
-
-        let x0 = tmp.width, y0 = tmp.height, x1 = 0, y1 = 0;
-        let found = false;
-
-        for (let y = 0; y < tmp.height; y++) {
-          for (let x = 0; x < tmp.width; x++) {
-            const i = (y * tmp.width + x) * 4;
-            const r = data[i], g = data[i+1], b = data[i+2], a = data[i+3];
-            // Detecta pixels visíveis: alpha > 20 E não quase-preto (r+g+b > 45)
-            if (a > 20 && (r + g + b) > 45) {
-              if (x < x0) x0 = x;
-              if (y < y0) y0 = y;
-              if (x > x1) x1 = x;
-              if (y > y1) y1 = y;
-              found = true;
-            }
-          }
-        }
-
-        if (!found || x1 <= x0 || y1 <= y0) { showFallback(); return; }
-
-        const pad = 16;
-        x0 = Math.max(0, x0 - pad);
-        y0 = Math.max(0, y0 - pad);
-        x1 = Math.min(tmp.width,  x1 + pad);
-        y1 = Math.min(tmp.height, y1 + pad);
-
-        const cw = x1 - x0;
-        const ch = y1 - y0;
-
-        out.width  = cw;
-        out.height = ch;
-        out.getContext('2d').drawImage(img, x0, y0, cw, ch, 0, 0, cw, ch);
-      } catch(e) {
-        showFallback();
-      }
-    }
-
-    if (src.complete && src.naturalWidth) {
-      cropLogo(src);
-    } else {
-      src.addEventListener('load', () => cropLogo(src));
-      src.addEventListener('error', showFallback);
-    }
-  })();
+  /* ─── LOGO: PNG com transparência real gerado via Python — sem canvas necessário ─── */
 
   /* ─── SMOOTH ANCHOR ─── */
   document.querySelectorAll('a[href^="#"]').forEach(a => {
