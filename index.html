@@ -627,7 +627,6 @@
       background: var(--bg);
       border-top: 1px solid var(--gold-border);
       padding: 80px 24px;
-      text-align: center;
     }
     .takes-video-wrap {
       max-width: 800px;
@@ -1469,12 +1468,14 @@
       <h2 class="section-title">Veja o que aconteceu<br>na <em>edição anterior</em>.</h2>
       <div class="divider"></div>
     </div>
-    <div class="takes-video-wrap reveal">
-      <!-- PLACEHOLDER: substituir pelo link do vídeo de takes do evento FronteSara quando Miguel editar -->
-      <div class="takes-placeholder">
-        <div class="takes-placeholder-icon">&#127909;</div>
-        <p><strong style="color:var(--text);">Vídeo em edição</strong></p>
-        <p>Takes do evento anterior chegando em breve</p>
+    <div class="video-wrapper reveal">
+      <div class="video-frame">
+        <video
+          playsinline
+          controls
+          preload="metadata">
+          <source src="assets/videobastidorsite.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
   </div>
