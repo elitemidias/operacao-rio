@@ -207,7 +207,7 @@ Não existe cupom. Não existe "me manda no direct que consigo desconto". O pre�
 
 ---
 
-- **Data:** 16 de maio de 2026 (sábado)
+- **Data:** 15 de maio de 2026 (sexta-feira)
 - **Local:** Rio de Janeiro, RJ *(endereço completo divulgado aos inscritos)*
 - **Formato:** Imersão presencial — meio período. Objetivo e sem enrolação.
 
@@ -215,13 +215,12 @@ Não existe cupom. Não existe "me manda no direct que consigo desconto". O pre�
 
 | Horário | Bloco |
 |---------|-------|
-| 09:00 | Credenciamento e abertura |
-| 09:30 | Bloco 1 — Braian Corrêa |
-| 10:30 | ☕ Coffee Break |
-| 11:00 | Bloco 2 — Nando Borba |
-| 12:00 | Painel Q&A — Braian + Nando |
-| 12:30 | Networking livre |
-| 13:00 | Encerramento |
+| 13:30 | Credenciamento e abertura |
+| 14:00 | Bloco 1 — Braian Corrêa |
+| 15:30 | ☕ Coffee Break |
+| 16:00 | Bloco 2 — Nando Borba |
+| 17:30 | Painel Q&A — Braian + Nando |
+| 18:30 | Encerramento |
 
 **Incluso:**
 - Acesso à Operação Rio completa
@@ -311,7 +310,7 @@ Informações detalhadas sobre o local (endereço, estacionamento, transporte) s
 
 1. **Visual:** Paleta Dourado `#C9A227` + Preto `#0D0D0D` + Prata/Branco `#E8E8E8`. Seguir estrutura da LP FronteSara (dark/gold, animações reveal on scroll).
 2. **"Fé no Front"** aparece apenas como assinatura discreta no CTA final. Nunca como título ou tema principal.
-3. **Countdown:** Apontar para 16/05/2026.
+3. **Countdown:** Apontar para 15/05/2026.
 4. **CTAs:** Todos apontam para o link do Sympla (a definir — Nando configura).
 5. **Lotes:** Mostrar apenas o lote ativo. Os demais com "Encerrado" / "Em breve".
 6. **Depoimentos:** Placeholders — substituir por depoimentos reais assim que coletados.
