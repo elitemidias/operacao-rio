@@ -475,7 +475,7 @@ footer{background:var(--bg);border-top:1px solid rgba(255,255,255,.06);padding:4
 
 <!-- TOP BAR — urgência -->
 <div class="top-bar">
-  ⚠ Últimas <strong id="vagas-count">15 vagas</strong> · Faltam <strong>10 dias</strong> · Garantia até o coffee break
+  ⚠ <strong id="vagas-count">Últimas 15 vagas</strong> · Faltam <strong id="top-dias">10 dias</strong> · Garantia até o coffee break
 </div>
 
 <!-- NAV -->
@@ -1013,11 +1013,11 @@ setInterval(updateCountdown,1000);
   }
 
   // atualiza contador de dias na top bar
-  const topDias = document.querySelectorAll('.top-bar strong');
-  if(topDias[1]){
-    if(diasFaltam === 0) topDias[1].textContent = 'HOJE';
-    else if(diasFaltam === 1) topDias[1].textContent = '1 dia';
-    else topDias[1].textContent = diasFaltam + ' dias';
+  const topDiasEl = document.getElementById('top-dias');
+  if(topDiasEl){
+    if(diasFaltam === 0) topDiasEl.textContent = 'HOJE';
+    else if(diasFaltam === 1) topDiasEl.textContent = '1 dia';
+    else topDiasEl.textContent = diasFaltam + ' dias';
   }
 })();
 
