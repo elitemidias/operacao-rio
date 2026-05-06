@@ -981,7 +981,7 @@ setInterval(updateCountdown,1000);
   const TOTAL = 40;
   const eventDate = new Date('2026-05-15T14:00:00-03:00').getTime();
   const now = Date.now();
-  const diasFaltam = Math.max(0, Math.ceil((eventDate - now) / 86400000));
+  const diasFaltam = Math.max(0, Math.floor((eventDate - now) / 86400000));
 
   // tabela de progressão (dias-faltam → vagas-preenchidas)
   const curva = [
