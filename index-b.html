@@ -469,6 +469,46 @@ footer{background:var(--bg);border-top:1px solid rgba(255,255,255,.06);padding:4
 .wa-fab:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(37,211,102,.5)}
 .wa-fab svg{width:20px;height:20px;fill:#fff;flex-shrink:0}
 @media(max-width:480px){.wa-fab span{display:none}}
+
+/* ═════════════════════════
+   PRÉ-FORM MODAL
+═════════════════════════ */
+.pf-overlay{position:fixed;inset:0;z-index:9999;
+  background:rgba(0,0,0,.78);backdrop-filter:blur(7px);
+  display:flex;align-items:center;justify-content:center;padding:20px;
+  opacity:0;pointer-events:none;transition:opacity .28s ease}
+.pf-overlay.active{opacity:1;pointer-events:auto}
+.pf-modal{background:var(--bg3);border:1px solid var(--gold);border-radius:16px;
+  padding:40px 36px;max-width:460px;width:100%;position:relative;
+  box-shadow:0 0 80px rgba(201,162,39,.22);
+  transform:translateY(22px);transition:transform .28s ease}
+.pf-overlay.active .pf-modal{transform:none}
+.pf-close{position:absolute;top:14px;right:16px;background:none;border:none;
+  color:var(--fgm);font-size:20px;cursor:pointer;padding:4px 8px;
+  line-height:1;transition:color .2s}
+.pf-close:hover{color:var(--fg)}
+.pf-eyebrow{font-size:10px;font-weight:700;letter-spacing:3px;
+  text-transform:uppercase;color:var(--gold);display:block;margin-bottom:8px}
+.pf-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(24px,4vw,32px);
+  letter-spacing:1px;color:var(--fg);margin-bottom:8px;line-height:1.05}
+.pf-sub{font-size:13px;color:var(--fgm);margin-bottom:24px;line-height:1.6}
+.pf-field{margin-bottom:13px}
+.pf-field label{display:block;font-size:10px;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--fgm);margin-bottom:6px}
+.pf-field input{width:100%;background:rgba(255,255,255,.05);
+  border:1px solid rgba(201,162,39,.25);border-radius:6px;
+  padding:13px 15px;color:var(--fg);font-size:14px;font-family:'Inter',sans-serif;
+  transition:border-color .2s;outline:none}
+.pf-field input:focus{border-color:var(--gold)}
+.pf-field input::placeholder{color:rgba(138,138,138,.6)}
+.pf-submit-wrap{margin-top:6px}
+.pf-submit-wrap .btn{width:100%;justify-content:center;font-size:14px;padding:17px 24px}
+.pf-note{font-size:11px;color:rgba(138,138,138,.7);text-align:center;
+  margin-top:13px;line-height:1.5}
+.pf-wa-link{display:block;text-align:center;font-size:12px;color:var(--fgm);
+  text-decoration:none;margin-top:11px;transition:color .2s;letter-spacing:.2px}
+.pf-wa-link:hover{color:#25D366}
+@media(max-width:480px){.pf-modal{padding:28px 18px;border-radius:12px}}
 </style>
 </head>
 <body>
@@ -948,6 +988,35 @@ que Buscam mais conhecimento e networking.</h1>
   </div>
 </footer>
 
+<!-- PRÉ-FORM MODAL -->
+<div id="pf-overlay" class="pf-overlay" role="dialog" aria-modal="true" aria-labelledby="pf-title">
+  <div class="pf-modal" id="pf-modal">
+    <button class="pf-close" onclick="pfClose()" aria-label="Fechar">✕</button>
+    <span class="pf-eyebrow">Quase lá — só mais um passo</span>
+    <h3 class="pf-title" id="pf-title">Reserve sua vaga agora</h3>
+    <p class="pf-sub">Confirme seus dados para garantir seu lugar e receber as informações do evento no e-mail.</p>
+    <form id="pf-form" novalidate>
+      <div class="pf-field">
+        <label for="pf-name">Nome completo</label>
+        <input type="text" id="pf-name" name="name" placeholder="Como você se chama?" required autocomplete="name">
+      </div>
+      <div class="pf-field">
+        <label for="pf-email">Seu melhor e-mail</label>
+        <input type="email" id="pf-email" name="email" placeholder="email@exemplo.com" required autocomplete="email">
+      </div>
+      <div class="pf-field">
+        <label for="pf-whatsapp">WhatsApp com DDD</label>
+        <input type="tel" id="pf-whatsapp" name="whatsapp" placeholder="(21) 99999-9999" required autocomplete="tel">
+      </div>
+      <div class="pf-submit-wrap">
+        <button type="submit" id="pf-submit" class="btn btn-primary">GARANTIR MINHA VAGA →</button>
+      </div>
+    </form>
+    <p class="pf-note">Sem spam. Só confirmação e as informações do evento.</p>
+    <a href="https://wa.me/5521999468989?text=Ol%C3%A1%2C+tenho+uma+d%C3%BAvida+sobre+a+Opera%C3%A7%C3%A3o+Rio+antes+de+finalizar+minha+inscri%C3%A7%C3%A3o" class="pf-wa-link" target="_blank" rel="noopener">Prefere tirar uma dúvida antes? Falar com a equipe →</a>
+  </div>
+</div>
+
 <!-- WA FAB -->
 <a href="https://wa.me/5521999468989?text=Quero+saber+mais+sobre+a+Opera%C3%A7%C3%A3o+Rio" class="wa-fab" target="_blank" rel="noopener">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -1055,11 +1124,80 @@ const vidIo = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 vidIo.observe(provaVid);
 
-// ── CTA TRACK ──
+// ── PRÉ-FORM MODAL ──
+const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxiq5CNE7OpJdPEE7VW_2be4aR7982w6oT6QcElG0kkuIZeDDh0ec5OPTA3z4o9_DbQ/exec';
+
+let pendingUrl = null;
+
+// Intercept Hotmart CTAs
 document.querySelectorAll('a[href*="hotmart"]').forEach(a => {
-  a.addEventListener('click', () => {
-    if(window.fbq) fbq('track', 'InitiateCheckout', { content_name: 'LP-B-Operacao-Rio' });
+  a.addEventListener('click', function(e){
+    e.preventDefault();
+    pendingUrl = this.href;
+    pfOpen();
   });
+});
+
+function pfOpen(){
+  document.getElementById('pf-overlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => document.getElementById('pf-name').focus(), 80);
+}
+
+function pfClose(){
+  document.getElementById('pf-overlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Fechar clicando fora do modal
+document.getElementById('pf-overlay').addEventListener('click', function(e){
+  if(e.target === this) pfClose();
+});
+
+// Fechar com ESC
+document.addEventListener('keydown', e => { if(e.key === 'Escape') pfClose(); });
+
+// Submit do formulário
+document.getElementById('pf-form').addEventListener('submit', function(e){
+  e.preventDefault();
+
+  const name     = document.getElementById('pf-name').value.trim();
+  const email    = document.getElementById('pf-email').value.trim();
+  const whatsapp = document.getElementById('pf-whatsapp').value.trim();
+
+  if(!name || !email || !whatsapp) return;
+
+  const produto = (pendingUrl && pendingUrl.includes('fbsttq5p')) ? 'Duplo R$149' : 'Individual R$97';
+
+  // Meta Pixel — Lead + InitiateCheckout
+  if(window.fbq){
+    fbq('track', 'Lead', { content_name: 'PreForm-LP-B', currency: 'BRL',
+      value: produto.includes('Duplo') ? 149 : 97 });
+    fbq('track', 'InitiateCheckout', { content_name: 'LP-B-Operacao-Rio',
+      currency: 'BRL', value: produto.includes('Duplo') ? 149 : 97 });
+  }
+
+  // Enviar para Google Sheets via Apps Script (fire-and-forget)
+  if(WEBHOOK_URL !== 'COLE_AQUI_A_URL_DO_APPS_SCRIPT'){
+    fetch(WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, whatsapp, produto, origem: 'LP-B' })
+    }).catch(() => {});
+  }
+
+  // Botão de loading
+  const btn = document.getElementById('pf-submit');
+  btn.textContent = 'Redirecionando...';
+  btn.disabled = true;
+
+  // Montar URL do Hotmart com pré-preenchimento
+  const url = new URL(pendingUrl);
+  url.searchParams.set('checkout[buyer_name]', name);
+  url.searchParams.set('checkout[buyer_email]', email);
+
+  // Redirecionar após breve pausa (dá tempo ao fetch iniciar)
+  setTimeout(() => { window.location.href = url.toString(); }, 350);
 });
 </script>
 
