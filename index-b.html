@@ -1178,10 +1178,12 @@ document.getElementById('pf-form').addEventListener('submit', function(e){
   }
 
   // Enviar para Google Sheets via Apps Script (fire-and-forget)
+  // Content-Type: text/plain evita preflight CORS — Apps Script ainda processa o JSON
   if(WEBHOOK_URL !== 'COLE_AQUI_A_URL_DO_APPS_SCRIPT'){
     fetch(WEBHOOK_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
       body: JSON.stringify({ name, email, whatsapp, produto, origem: 'LP-B' })
     }).catch(() => {});
   }
@@ -1191,13 +1193,8 @@ document.getElementById('pf-form').addEventListener('submit', function(e){
   btn.textContent = 'Redirecionando...';
   btn.disabled = true;
 
-  // Montar URL do Hotmart com pré-preenchimento
-  const url = new URL(pendingUrl);
-  url.searchParams.set('checkout[buyer_name]', name);
-  url.searchParams.set('checkout[buyer_email]', email);
-
   // Redirecionar após breve pausa (dá tempo ao fetch iniciar)
-  setTimeout(() => { window.location.href = url.toString(); }, 350);
+  setTimeout(() => { window.location.href = pendingUrl; }, 350);
 });
 </script>
 
